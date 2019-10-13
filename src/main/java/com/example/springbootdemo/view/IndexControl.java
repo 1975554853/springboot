@@ -33,7 +33,7 @@ public class IndexControl {
 
 
 
-    /**
+    /**调用其他接口
      * restTemplate 支持我们常用的请求类型,
      * 比如 delete()/put(),但是通常情况下,
      * 第三方接口是不会提供删除/添加功能的(除了我们自己系统内部间的调用),

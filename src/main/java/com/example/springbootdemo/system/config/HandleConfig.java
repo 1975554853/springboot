@@ -23,7 +23,7 @@ public class HandleConfig extends WebMvcConfigurationSupport {
     @Value("${file.upload}")
     private String imageUrl;
 
-
+//添加拦截器
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginHandle);
