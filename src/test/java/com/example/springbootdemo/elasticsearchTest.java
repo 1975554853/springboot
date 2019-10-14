@@ -8,7 +8,9 @@ import com.example.springbootdemo.system.Elasticsearch.mapper.EmployeeDao;
 import com.example.springbootdemo.system.Elasticsearch.mapper.VehicleRepository;
 import com.example.springbootdemo.system.Elasticsearch.service.VehicleTemplateService;
 import lombok.extern.slf4j.Slf4j;
+import org.elasticsearch.common.geo.GeoDistance;
 import org.elasticsearch.common.geo.GeoPoint;
+import org.elasticsearch.common.unit.DistanceUnit;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -243,4 +245,12 @@ public class elasticsearchTest {
         employeeDao.saveAll(employees);
     }
 
+    /**
+     *  测算两个地点间的距离
+     */
+    @Test
+    public void Index() {
+        double distance = GeoDistance.ARC.calculate(12.71, 13.25, 39.929986, 116.395645, DistanceUnit.KILOMETERS);
+        System.out.println(distance+"&&&&&&&");
+    }
 }
