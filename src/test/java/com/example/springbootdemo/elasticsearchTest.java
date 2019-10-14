@@ -84,7 +84,7 @@ public class elasticsearchTest {
                 person.setRemark("我不爱日本，我爱祖国"+i);
             }
 
-            person.setAddress(new GeoPoint(dlat,dlon));
+            person.setAddress(dlat+","+dlon);
             addressPointDto.add(person);
         }
         for (int j = 0; j < 10; j++) {
@@ -118,9 +118,9 @@ public class elasticsearchTest {
 
     @Test
     public void findByAddressPointDtoName(){
-        String name = "张三1";
+        String name = "李四1";
         List<VehicleDto> list = vehicleRepository.findByAddressPointDtoName(name,PageRequest.of(0,5));
-        System.err.println("findAll:"+list);
+        System.err.println("findAll:"+list.size());
     }
 
     @Test
@@ -179,7 +179,7 @@ public class elasticsearchTest {
                 person.setRemark("我不爱日本，我爱祖国"+i);
             }
 
-            person.setAddress(new GeoPoint(dlat,dlon));
+            person.setAddress(dlat+","+dlon);
             addressPointDto.add(person);
         }
         for (int j = 30; j < 40; j++) {
@@ -237,11 +237,10 @@ public class elasticsearchTest {
             // 纬度,经度
             GeoPoint geoPoint = new GeoPoint(12.71+(i/10),13.25+(i/10));
             System.out.println(geoPoint+"******");
-            employee.setGeo(geoPoint);
-            employeeDao.save(employee);
+            employee.setGeo(12.71+(i/10)+","+13.25+(i/10));
             employees.add(employee);
         }
-//        employeeDao.saveAll(employees);
+        employeeDao.saveAll(employees);
     }
 
 }

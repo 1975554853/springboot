@@ -43,7 +43,7 @@ public class AddressPointDto implements Serializable {
     private String remark;
 
     @GeoPointField
-    private GeoPoint address;
+    private String address;
 
     public AddressPointDto() {
     }
@@ -72,11 +72,11 @@ public class AddressPointDto implements Serializable {
         this.type = type;
     }
 
-    public GeoPoint getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(GeoPoint address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

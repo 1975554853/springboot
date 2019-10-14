@@ -31,6 +31,6 @@ public class Employee implements Serializable {
 
 
     @GeoPointField
-    private GeoPoint geo;
+    private String geo;
 
 }
